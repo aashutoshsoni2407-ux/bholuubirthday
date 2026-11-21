@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" width="160" height="120">
+  <defs>
+    <!-- Top Arc Path for Text -->
+    <path id="stampTopArc" d="M 22,60 A 38,38 0 1,1 98,60" fill="none" />
+    <!-- Bottom Arc Path for Text -->
+    <path id="stampBottomArc" d="M 24,60 A 36,36 0 0,0 96,60" fill="none" />
+  </defs>
+
+  <!-- Wavy Cancellation Lines (Right side) -->
+  <g stroke="#e2577e" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.85">
+    <path d="M 104,36 Q 118,30 132,36 T 156,36" />
+    <path d="M 106,50 Q 120,44 134,50 T 158,50" />
+    <path d="M 104,64 Q 118,58 132,64 T 156,64" />
+    <path d="M 108,78 Q 122,72 136,78 T 154,78" />
+  </g>
+
+  <!-- Outer Dashed Ring -->
+  <circle cx="60" cy="60" r="48" fill="none" stroke="#e2577e" stroke-width="2" stroke-dasharray="4,2.5" opacity="0.9" />
+  <!-- Inner Solid Ring -->
+  <circle cx="60" cy="60" r="39" fill="none" stroke="#e2577e" stroke-width="1.8" opacity="0.9" />
+
+  <!-- Top Text: WITH LOVE ♡ -->
+  <text font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="800" fill="#c42b58" letter-spacing="1.2">
+    <textPath href="#stampTopArc" startOffset="50%" text-anchor="middle">
+      WITH LOVE ♡ WITH LOVE
+    </textPath>
+  </text>
+
+  <!-- Center Heart -->
+  <g transform="translate(60, 60) scale(0.9)">
+    <path d="M 0,-6 C -4,-13 -14,-10 -14,-3 C -14,5 0,14 0,14 C 0,14 14,5 14,-3 C 14,-10 4,-13 0,-6 Z" fill="#e2577e" />
+  </g>
+
+  <!-- Bottom Date / Text -->
+  <text font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="700" fill="#c42b58" letter-spacing="1">
+    <textPath href="#stampBottomArc" startOffset="50%" text-anchor="middle">
+      ★ SPECIAL DELIVERY ★
+    </textPath>
+  </text>
+</svg>

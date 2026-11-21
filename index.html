@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Bhhole Chatureee 🫂🛐</title>
+  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Preloading screen for smooth playback -->
+  <div id="loader" class="loader">
+    <div class="loader-content">
+      <div class="loader-bar-bg">
+        <div id="loader-bar" class="loader-bar"></div>
+      </div>
+      <div id="loader-text" class="loader-text">Loading 0%</div>
+    </div>
+  </div>
+
+  <!-- FIXED VIEWPORT CANVAS (Pinned securely to the screen) -->
+  <div id="canvasWrapper" class="canvas-wrapper">
+    <canvas id="canvas"></canvas>
+
+    <!-- Transparent Authentic Framing Text around Kitty (Sequence 1) -->
+    <div id="kittyFraming" class="kitty-framing">
+      <svg class="kitty-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+        <!-- Top Arc: curves gracefully above kitty's ears -->
+        <path id="kittyTopCurve" d="M 180,460 A 800,380 0 0,1 1740,460" fill="none" />
+        <!-- Bottom Arc: smiles softly beneath kitty, completely clear of tongue and chin -->
+        <path id="kittyBottomCurve" d="M 240,920 A 760,110 0 0,0 1680,920" fill="none" />
+
+        <text class="kitty-arc-text top-text">
+          <textPath href="#kittyTopCurve" xlink:href="#kittyTopCurve" startOffset="50%" text-anchor="middle">
+            HAPPY BIRTHDAY
+          </textPath>
+        </text>
+
+        <text class="kitty-arc-text bottom-text">
+          <textPath href="#kittyBottomCurve" xlink:href="#kittyBottomCurve" startOffset="50%" text-anchor="middle">
+            BHHOLE CHATUREEE
+          </textPath>
+        </text>
+      </svg>
+    </div>
+
+    <!-- Smooth Transition Text Overlay -->
+    <div id="transitionOverlay" class="transition-overlay">
+      <h1 class="birthday-title">Happy Birthday<br><span class="highlight-name">Bhhole Chatureee</span></h1>
+    </div>
+
+    <!-- Scroll hint at initial screen -->
+    <div id="scrollHint" class="scroll-hint">
+      <span class="scroll-arrow">↓</span>
+      <span>Scroll Down</span>
+    </div>
+  </div>
+
+  <!-- SCROLL TRACK: governs total scroll length for both sequences -->
+  <div class="scroll-track" id="scrollTrack"></div>
+
+  <!-- ROUGH OUTLINE OF THE WEBSITE (Cute Theme matching adorable kitten) -->
+  <main class="site-outline cute-theme">
+    
+    <!-- Section 1: Cute Memories & Moments -->
+    <section class="outline-section">
+      <div class="outline-container">
+        <h2 class="section-heading">🎀 Cute Memories & Moments 🎀</h2>
+        <p class="section-desc">Snapshots of our favorite little memories, smiles, and laughter 🫂🛐</p>
+        
+        <div class="polaroid-grid">
+          <div class="polaroid-card rotate-left" onclick="openLetterModal('memory1.jpg')" title="Click to view full photo">
+            <div class="card-bow">🎀</div>
+            <div class="washi-tape"></div>
+            <div class="polaroid-photo">
+              <img src="memory1.jpg" alt="Memory Photo 1" class="polaroid-img">
+            </div>
+          </div>
+
+          <div class="polaroid-card" onclick="openLetterModal('memory2.jpg')" title="Click to view full photo">
+            <div class="card-bow">🎀</div>
+            <div class="washi-tape washi-pink"></div>
+            <div class="polaroid-photo">
+              <img src="memory2.jpg" alt="Memory Photo 2" class="polaroid-img">
+            </div>
+          </div>
+
+          <div class="polaroid-card rotate-right" onclick="openLetterModal('memory3.jpg')" title="Click to view full photo">
+            <div class="card-bow">🎀</div>
+            <div class="washi-tape washi-yellow"></div>
+            <div class="polaroid-photo">
+              <img src="memory3.jpg" alt="Memory Photo 3" class="polaroid-img pos-center">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: A Secret Letter For You -->
+    <section class="outline-section" id="sectionWishes">
+      <div class="outline-container">
+        <div class="envelope-showcase">
+          <!-- Cute Companion Kitten -->
+          <div class="cute-companion">
+            <div class="cat-avatar-wrap">
+              <img src="cute_kitten.jpg" alt="Blushing Kitten" class="companion-cat">
+            </div>
+            <div class="speech-bubble">
+              Aree blushh mat karo cutoo... click to open! 🫂🛐
+            </div>
+          </div>
+
+          <!-- Interactive Click-to-Open Envelope & Letter -->
+          <div class="letter-interactive" id="letterInteractive" onclick="toggleLetter()">
+            <!-- Sealed Envelope State -->
+            <div class="envelope-sealed cute-heart-envelope-theme" id="envelopeSealed">
+              <div class="envelope-bow-deco">🎀</div>
+              <div class="envelope-art">
+                <div class="cute-envelope-illustration-wrap">
+                  <img src="cute_envelope_art.png" alt="Cute Heart Envelope" class="cute-envelope-img">
+                </div>
+                <div class="envelope-front-content">
+                  <span class="envelope-tag">SECRET BIRTHDAY NOTE 🎀</span>
+                  <h3 class="envelope-recipient">For My Bhhole Chatureee 🫂🛐</h3>
+                  <button class="open-envelope-btn" type="button">
+                    <span>✨ Click to Open Letter ✨</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unfolded Letter State (Reveals when clicked) -->
+            <div class="envelope-unfolded" id="envelopeUnfolded">
+              <div class="unfolded-header">
+                <span class="unfolded-tag">🎀 Handwritten with Love 🫂🛐</span>
+                <button class="close-letter-btn" type="button" onclick="event.stopPropagation(); toggleLetter()">
+                  ✕ Close Letter
+                </button>
+              </div>
+
+              <div class="unfolded-frame" onclick="event.stopPropagation(); openLetterModal()" title="Click to view full screen">
+                <img src="birthday_letter.jpg" alt="Birthday Letter for Aditi" class="unfolded-img">
+                <div class="unfolded-badge">
+                  <span>🔍 Click image to zoom full screen</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cute Footer -->
+    <footer class="cute-footer">
+      <p>Made with all my heart for Bhhole Chatureee 🫂🛐</p>
+    </footer>
+
+  </main>
+
+  <!-- Lightbox Modal for Full Letter / Photo View -->
+  <div id="letterModal" class="letter-modal" onclick="closeLetterModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeLetterModal()">&times;</button>
+      <img src="birthday_letter.jpg" alt="Full View" class="modal-img" id="modalImg">
+    </div>
+  </div>
+
+  <script src="script.js?v=13"></script>
+</body>
+</html>
